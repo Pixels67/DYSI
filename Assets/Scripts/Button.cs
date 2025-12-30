@@ -7,6 +7,7 @@ public enum ButtonType
     No
 }
 
+[RequireComponent(typeof(Animation))]
 public class Button : MonoBehaviour, IInteractable
 {
     public static event Action<ButtonType> OnButtonPressed;
@@ -16,5 +17,6 @@ public class Button : MonoBehaviour, IInteractable
     public void Interact()
     {
         OnButtonPressed?.Invoke(buttonType);
+        GetComponent<Animation>().Play();
     }
 }
