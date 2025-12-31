@@ -28,11 +28,6 @@ public class InteractionController : MonoBehaviour
 
     private void Update()
     {
-        if (!Mouse.current.leftButton.wasPressedThisFrame)
-        {
-            return;
-        }
-        
         var ray = _camera.ViewportPointToRay(new Vector2(0.5f, 0.5f));
 
         if (!Physics.Raycast(ray, out var hit, maxInteractDistance))
@@ -41,6 +36,16 @@ public class InteractionController : MonoBehaviour
         }
 
         var components = hit.collider.gameObject.GetComponents<IInteractable>();
+        foreach (var component in components)
+        {
+            component.Hover();
+        }
+        
+        if (!Mouse.current.leftButton.wasPressedThisFrame)
+        {
+            return;
+        }
+        
         foreach (var component in components)
         {
             component.Interact();
