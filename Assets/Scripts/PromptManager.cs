@@ -7,6 +7,8 @@ using UnityEngine.Events;
 
 public class PromptManager : MonoBehaviour
 {
+    public bool FinishedShift { get; private set; }
+    
     [SerializeField] private PromptList[] promptLists;
     [SerializeField] private TMP_Text uiText;
     [SerializeField] private float charDelaySeconds = 0.05f;
@@ -23,6 +25,7 @@ public class PromptManager : MonoBehaviour
         {
             _shiftCounter++;
             _promptCounter = 0;
+            FinishedShift = false;
         }
     }
 
@@ -76,6 +79,11 @@ public class PromptManager : MonoBehaviour
 
         yield return new WaitForSeconds(prompt.pauseSeconds);
 
+        if (_promptCounter >= prompts.Count)
+        {
+            FinishedShift = true;
+        }
+        
         _displayPromptCoroutine = null;
     }
 

@@ -1,8 +1,15 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+public interface IItem
+{
+    public void Use(GameObject obj);
+}
+
 public class InteractionController : MonoBehaviour
 {
+    public IItem CurrentItem = null;
+    
     [SerializeField] private float maxInteractDistance = 5.0f;
     
     private Camera _camera;
@@ -50,5 +57,7 @@ public class InteractionController : MonoBehaviour
         {
             component.Interact();
         }
+        
+        CurrentItem?.Use(hit.collider.gameObject);
     }
 }

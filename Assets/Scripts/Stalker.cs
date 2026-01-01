@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(SpriteRenderer))]
-public class Figure : MonoBehaviour, IInteractable
+public class Stalker : MonoBehaviour, IInteractable
 {
     [SerializeField] private Vector3 retreatPos;
     [SerializeField] private float retreatSpeed = 0.1f;
