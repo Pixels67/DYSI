@@ -1,18 +1,22 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public interface IItem
+public abstract class Item : MonoBehaviour
 {
-    public void Use(GameObject obj);
+    public GameObject itemObject;
+    
+    public abstract void Use(GameObject obj);
 }
 
 public class InteractionController : MonoBehaviour
 {
-    public IItem CurrentItem = null;
+    public Item currentItem;
     
     [SerializeField] private float maxInteractDistance = 5.0f;
+    [SerializeField] private Transform hand;
     
     private Camera _camera;
+    private GameObject _itemObject;
 
     private void Awake()
     {
@@ -31,6 +35,11 @@ public class InteractionController : MonoBehaviour
         {
             Debug.LogError("Interaction Controller: Camera not found!");
         }
+        
+        if (currentItem != null)
+        {
+            _itemObject = Instantiate(currentItem.itemObject, transform);
+        }
     }
 
     private void Update()
@@ -47,17 +56,37 @@ public class InteractionController : MonoBehaviour
         {
             component.Hover();
         }
-        
-        if (!Mouse.current.leftButton.wasPressedThisFrame)
+
+        if (Mouse.current.leftButton.wasPressedThisFrame)
         {
-            return;
+            foreach (var component in components)
+            {
+                component.Interact();
+            }
+        }
+
+        if (Mouse.current.rightButton.wasPressedThisFrame)
+        {
+            if (currentItem != null && _itemObject != null)
+            {
+                var itemComponent = _itemObject.GetComponent<Item>();
+                itemComponent?.Use(hit.collider.gameObject);
+            }
         }
         
-        foreach (var component in components)
+        UpdateItemObject();
+    }
+
+    private void UpdateItemObject()
+    {
+        if (currentItem != null && _itemObject == null)
         {
-            component.Interact();
+            _itemObject = Instantiate(currentItem.itemObject, hand);
         }
         
-        CurrentItem?.Use(hit.collider.gameObject);
+        if (currentItem == null && _itemObject != null)
+        {
+            Destroy(_itemObject);
+        }
     }
 }
