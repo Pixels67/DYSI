@@ -5447,13 +5447,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 195749658}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.21102372, z: -0, w: 0.97748095}
-  m_LocalPosition: {x: -1.72, y: 0.24, z: 9.76}
+  m_LocalRotation: {x: 0, y: -0.21643952, z: 0, w: 0.97629607}
+  m_LocalPosition: {x: -1.65, y: 1.25, z: 10}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 855144415}
-  m_LocalEulerAnglesHint: {x: 0, y: -24.365, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -25, z: 0}
 --- !u!212 &195749661
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5502,7 +5502,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 5dd0893e0828b44cdb3a4d388dda09cf, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.4528302, g: 0.41605237, b: 0.35671058, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -5977,6 +5977,7 @@ GameObject:
   - component: {fileID: 330585545}
   - component: {fileID: 330585544}
   - component: {fileID: 330585547}
+  - component: {fileID: 330585548}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -6103,6 +6104,159 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!82 &330585548
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330585543}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 7d9d9795fb052482e8c71ff3ef01887d, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.2
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!1 &351942716
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 351942718}
+  - component: {fileID: 351942717}
+  m_Layer: 0
+  m_Name: Siren
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!95 &351942717
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 351942716}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 468f13761bdc44f01aae43fbb2248cd8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!4 &351942718
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 351942716}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6, y: 3.25, z: -8.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1953308351}
+  - {fileID: 1976139245}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &391586985
 GameObject:
   m_ObjectHideFlags: 0
@@ -11316,21 +11470,25 @@ MonoBehaviour:
   promptLists:
   - prompts:
     - type: 1
-      text: 'Welcome to the Altar Research Facility.
+      text: 'Welcome to the Tranquility Research Laboratory.
 
-        You will be carrying
-        out the observational testing of the TQ-130 crystal.'
+        You will be
+        carrying out the observational testing of the TQ-130 crystal.'
+      hint: 1
       promptEvent:
         m_PersistentCalls:
           m_Calls: []
+      conditions: []
       delaySeconds: 0
       pauseSeconds: 0
     - type: 1
       text: The crystal has exotic properties that allow it to float above ground,
         and cause visual and auditory hallucinations.
+      hint: 1
       promptEvent:
         m_PersistentCalls:
           m_Calls: []
+      conditions: []
       delaySeconds: 0
       pauseSeconds: 0
     - type: 1
@@ -11340,9 +11498,11 @@ MonoBehaviour:
 
         After
         finishing all of your tasks, you can go back to your room and rest.'
+      hint: 1
       promptEvent:
         m_PersistentCalls:
           m_Calls: []
+      conditions: []
       delaySeconds: 0
       pauseSeconds: 0
     - type: 1
@@ -11351,9 +11511,11 @@ MonoBehaviour:
 
 
         Good luck!'
+      hint: 1
       promptEvent:
         m_PersistentCalls:
           m_Calls: []
+      conditions: []
       delaySeconds: 0
       pauseSeconds: 0
     - type: 1
@@ -11370,46 +11532,58 @@ MonoBehaviour:
 
         Initialization
         successful!'
+      hint: 1
       promptEvent:
         m_PersistentCalls:
           m_Calls: []
+      conditions: []
       delaySeconds: 0
       pauseSeconds: 0
     - type: 0
       text: Can you observe visual glitching on the monitor?
+      hint: 1
       promptEvent:
         m_PersistentCalls:
           m_Calls: []
+      conditions: []
       delaySeconds: 0
       pauseSeconds: 0
     - type: 0
       text: Do you hear any sounds coming from the testing chamber?
+      hint: 1
       promptEvent:
         m_PersistentCalls:
           m_Calls: []
+      conditions: []
       delaySeconds: 0
       pauseSeconds: 0
     - type: 0
       text: Is the crystal moving?
+      hint: 1
       promptEvent:
         m_PersistentCalls:
           m_Calls: []
+      conditions: []
       delaySeconds: 0
       pauseSeconds: 0
     - type: 0
       text: Do you hear any vocalizations?
+      hint: 1
       promptEvent:
         m_PersistentCalls:
           m_Calls: []
+      conditions: []
       delaySeconds: 0
       pauseSeconds: 0
     - type: 1
       text: 'Processing data...\d
 
         Finished!'
+      hint: 1
       promptEvent:
         m_PersistentCalls:
           m_Calls: []
+      conditions: []
       delaySeconds: 0
       pauseSeconds: 0
     - type: 1
@@ -11419,13 +11593,15 @@ MonoBehaviour:
 
         You
         can now go back to your room.'
+      hint: 0
       promptEvent:
         m_PersistentCalls:
           m_Calls: []
+      conditions: []
       delaySeconds: 0
       pauseSeconds: 0
   - prompts:
-    - type: 0
+    - type: 1
       text: '== Day 2 ==
 
         2057 / 8 / 14
@@ -11439,23 +11615,29 @@ MonoBehaviour:
 
         Initialization
         successful!'
+      hint: 1
       promptEvent:
         m_PersistentCalls:
           m_Calls: []
+      conditions: []
       delaySeconds: 0
       pauseSeconds: 0
     - type: 0
       text: Can you see the crystal clearly?
+      hint: 1
       promptEvent:
         m_PersistentCalls:
           m_Calls: []
+      conditions: []
       delaySeconds: 0
       pauseSeconds: 0
     - type: 0
       text: Is the crystal moving?
+      hint: 1
       promptEvent:
         m_PersistentCalls:
           m_Calls: []
+      conditions: []
       delaySeconds: 0
       pauseSeconds: 0
     - type: 1
@@ -11463,34 +11645,43 @@ MonoBehaviour:
 
         Operation
         successful!'
+      hint: 1
       promptEvent:
         m_PersistentCalls:
           m_Calls: []
+      conditions: []
       delaySeconds: 0
       pauseSeconds: 0
     - type: 0
       text: Is the crystal moving faster than before?
+      hint: 1
       promptEvent:
         m_PersistentCalls:
           m_Calls: []
+      conditions: []
       delaySeconds: 0
       pauseSeconds: 0
     - type: 0
       text: Is there someone in the control room?
+      hint: 1
       promptEvent:
         m_PersistentCalls:
           m_Calls: []
+      conditions: []
       delaySeconds: 0
       pauseSeconds: 0
     - type: 0
       text: Do you hear any sounds inside the control room?
+      hint: 1
       promptEvent:
         m_PersistentCalls:
           m_Calls: []
+      conditions: []
       delaySeconds: 0
       pauseSeconds: 0
     - type: 0
       text: Can you observe any humanoid figures standing in the testing chamber?
+      hint: 1
       promptEvent:
         m_PersistentCalls:
           m_Calls:
@@ -11506,10 +11697,12 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 1
             m_CallState: 2
+      conditions: []
       delaySeconds: 0
       pauseSeconds: 0
     - type: 0
       text: Do you feel wind coming down from the corridor?
+      hint: 1
       promptEvent:
         m_PersistentCalls:
           m_Calls:
@@ -11525,15 +11718,18 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
+      conditions: []
       delaySeconds: 0
       pauseSeconds: 0
     - type: 1
       text: 'Processing data...\d
 
         Finished!'
+      hint: 1
       promptEvent:
         m_PersistentCalls:
           m_Calls: []
+      conditions: []
       delaySeconds: 0
       pauseSeconds: 0
     - type: 1
@@ -11541,9 +11737,519 @@ MonoBehaviour:
 
         You can now go back to your
         room.'
+      hint: 0
       promptEvent:
         m_PersistentCalls:
           m_Calls: []
+      conditions: []
+      delaySeconds: 0
+      pauseSeconds: 0
+  - prompts:
+    - type: 1
+      text: '== Day 3 ==
+
+        2057 / 8 / 15
+
+        ===========
+
+        Initializing
+        systems...\d\d
+
+        Initializing electromagnetic resonance device...\d\d
+
+        Initialization
+        failed!'
+      hint: 1
+      promptEvent:
+        m_PersistentCalls:
+          m_Calls: []
+      conditions: []
+      delaySeconds: 0
+      pauseSeconds: 0
+    - type: 1
+      text: 'Error!
+
+        Detected mechanical failure in ERD!
+
+        Continue
+        to attempt automatic repair.'
+      hint: 0
+      promptEvent:
+        m_PersistentCalls:
+          m_Calls: []
+      conditions: []
+      delaySeconds: 0
+      pauseSeconds: 0
+    - type: 1
+      text: 'Error!
+
+        High device temperature detected!
+
+        Shutting
+        down systems...\d
+
+        Systems down.'
+      hint: 0
+      promptEvent:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 2019881763}
+            m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_MethodName: SetActive
+            m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 1
+            m_CallState: 2
+          - m_Target: {fileID: 351942716}
+            m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_MethodName: SetActive
+            m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 1
+            m_CallState: 2
+      conditions:
+      - type: 1
+        gameObject: {fileID: 1151576419}
+      - type: 1
+        gameObject: {fileID: 160406828}
+      - type: 1
+        gameObject: {fileID: 543373368}
+      delaySeconds: 2
+      pauseSeconds: 0
+    - type: 1
+      text: 'Initializing systems...\d\d
+
+        Initialization successful!\d
+
+        All
+        systems operational.'
+      hint: 1
+      promptEvent:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 351942716}
+            m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_MethodName: SetActive
+            m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+      conditions: []
+      delaySeconds: 0
+      pauseSeconds: 0
+    - type: 1
+      text: 'Increasing electromagnetic resonance factor from 30% to 50%...\d\d
+
+
+        Operation
+        successful!'
+      hint: 1
+      promptEvent:
+        m_PersistentCalls:
+          m_Calls: []
+      conditions: []
+      delaySeconds: 0
+      pauseSeconds: 0
+    - type: 0
+      text: Is the crystal moving faster than before?
+      hint: 1
+      promptEvent:
+        m_PersistentCalls:
+          m_Calls: []
+      conditions: []
+      delaySeconds: 0
+      pauseSeconds: 0
+    - type: 0
+      text: Do you feel euphoria?
+      hint: 1
+      promptEvent:
+        m_PersistentCalls:
+          m_Calls: []
+      conditions: []
+      delaySeconds: 0
+      pauseSeconds: 0
+    - type: 0
+      text: Do you hear any whispering?
+      hint: 1
+      promptEvent:
+        m_PersistentCalls:
+          m_Calls: []
+      conditions: []
+      delaySeconds: 0
+      pauseSeconds: 0
+    - type: 0
+      text: Do you feel a need to go inside the testing chamber?
+      hint: 1
+      promptEvent:
+        m_PersistentCalls:
+          m_Calls: []
+      conditions: []
+      delaySeconds: 0
+      pauseSeconds: 0
+    - type: 0
+      text: Do you feel tingling on your skin?
+      hint: 1
+      promptEvent:
+        m_PersistentCalls:
+          m_Calls: []
+      conditions: []
+      delaySeconds: 0
+      pauseSeconds: 0
+    - type: 0
+      text: Is the door leading to the testing chamber closed properly?
+      hint: 1
+      promptEvent:
+        m_PersistentCalls:
+          m_Calls: []
+      conditions: []
+      delaySeconds: 0
+      pauseSeconds: 0
+    - type: 0
+      text: Did you see anything strange on your way?
+      hint: 1
+      promptEvent:
+        m_PersistentCalls:
+          m_Calls: []
+      conditions: []
+      delaySeconds: 0
+      pauseSeconds: 0
+    - type: 0
+      text: Are you sure?
+      hint: 1
+      promptEvent:
+        m_PersistentCalls:
+          m_Calls: []
+      conditions: []
+      delaySeconds: 0
+      pauseSeconds: 0
+    - type: 0
+      text: Do you hear any sounds coming from the testing chamber?
+      hint: 1
+      promptEvent:
+        m_PersistentCalls:
+          m_Calls: []
+      conditions: []
+      delaySeconds: 0
+      pauseSeconds: 0
+    - type: 0
+      text: Is it pulling you in?
+      hint: 1
+      promptEvent:
+        m_PersistentCalls:
+          m_Calls: []
+      conditions: []
+      delaySeconds: 0
+      pauseSeconds: 0
+    - type: 0
+      text: Do you feel tired?
+      hint: 1
+      promptEvent:
+        m_PersistentCalls:
+          m_Calls: []
+      conditions: []
+      delaySeconds: 0
+      pauseSeconds: 0
+    - type: 0
+      text: Do you feel something behind you?
+      hint: 1
+      promptEvent:
+        m_PersistentCalls:
+          m_Calls: []
+      conditions: []
+      delaySeconds: 0
+      pauseSeconds: 0
+    - type: 0
+      text: Can you observe any visual glitching on the monitor?
+      hint: 1
+      promptEvent:
+        m_PersistentCalls:
+          m_Calls: []
+      conditions: []
+      delaySeconds: 0
+      pauseSeconds: 0
+    - type: 0
+      text: Do you feel safe?
+      hint: 1
+      promptEvent:
+        m_PersistentCalls:
+          m_Calls: []
+      conditions: []
+      delaySeconds: 0
+      pauseSeconds: 0
+    - type: 0
+      text: Do you feel the vibrations coming from the testing chamber wall?
+      hint: 1
+      promptEvent:
+        m_PersistentCalls:
+          m_Calls: []
+      conditions: []
+      delaySeconds: 1
+      pauseSeconds: 3
+    - type: 1
+      text: 'Processing data\d.\d.\d.\d
+
+        Finished!'
+      hint: 1
+      promptEvent:
+        m_PersistentCalls:
+          m_Calls: []
+      conditions: []
+      delaySeconds: 0
+      pauseSeconds: 0
+    - type: 1
+      text: 'You have completed your shift.
+
+        You can now go back to your
+        room.'
+      hint: 1
+      promptEvent:
+        m_PersistentCalls:
+          m_Calls: []
+      conditions: []
+      delaySeconds: 0
+      pauseSeconds: 0
+  - prompts:
+    - type: 1
+      text: '== Day 4 ==
+
+        2057 / 8 / 21
+
+        ===========
+
+        Initializing
+        systems...\d\d
+
+        Initializing electromagnetic resonance device...\d\d
+
+        Initialization
+        successful!'
+      hint: 1
+      promptEvent:
+        m_PersistentCalls:
+          m_Calls: []
+      conditions: []
+      delaySeconds: 0
+      pauseSeconds: 0
+    - type: 1
+      text: Increasing electromagnetic resonance factor from 50% to 60%...\d\d
+      hint: 0
+      promptEvent:
+        m_PersistentCalls:
+          m_Calls: []
+      conditions: []
+      delaySeconds: 0
+      pauseSeconds: 0
+    - type: 1
+      text: Operation successful!
+      hint: 0
+      promptEvent:
+        m_PersistentCalls:
+          m_Calls: []
+      conditions: []
+      delaySeconds: 2
+      pauseSeconds: 0
+    - type: 1
+      text: 'Error!
+
+        Abnormal device behaviour detected!'
+      hint: 1
+      promptEvent:
+        m_PersistentCalls:
+          m_Calls: []
+      conditions: []
+      delaySeconds: 0
+      pauseSeconds: 0
+    - type: 1
+      text: 'Initializing automated repair...\d\d\d\d\d
+
+        Operation successful!'
+      hint: 1
+      promptEvent:
+        m_PersistentCalls:
+          m_Calls: []
+      conditions: []
+      delaySeconds: 0
+      pauseSeconds: 0
+    - type: 1
+      text: All systems operational
+      hint: 1
+      promptEvent:
+        m_PersistentCalls:
+          m_Calls: []
+      conditions: []
+      delaySeconds: 0
+      pauseSeconds: 0
+    - type: 0
+      text: Can you see the crystal properly?
+      hint: 1
+      promptEvent:
+        m_PersistentCalls:
+          m_Calls: []
+      conditions: []
+      delaySeconds: 0
+      pauseSeconds: 0
+    - type: 0
+      text: Is the crystal moving?
+      hint: 1
+      promptEvent:
+        m_PersistentCalls:
+          m_Calls: []
+      conditions: []
+      delaySeconds: 0
+      pauseSeconds: 0
+    - type: 0
+      text: Do you believe in ghosts?
+      hint: 1
+      promptEvent:
+        m_PersistentCalls:
+          m_Calls: []
+      conditions: []
+      delaySeconds: 0
+      pauseSeconds: 0
+    - type: 1
+      text: '\d\dError!
+
+        Unknown entity in control room!\d
+
+        Error!
+
+        B\dE\dH\dI\dN\dD
+
+
+        Rebooting...\d\d\d'
+      hint: 1
+      promptEvent:
+        m_PersistentCalls:
+          m_Calls: []
+      conditions: []
+      delaySeconds: 0
+      pauseSeconds: 0
+    - type: 1
+      text: \dReboot successful!
+      hint: 1
+      promptEvent:
+        m_PersistentCalls:
+          m_Calls: []
+      conditions: []
+      delaySeconds: 0
+      pauseSeconds: 0
+    - type: 0
+      text: Did you see anything strange on your way?
+      hint: 1
+      promptEvent:
+        m_PersistentCalls:
+          m_Calls: []
+      conditions: []
+      delaySeconds: 0
+      pauseSeconds: 0
+    - type: 0
+      text: Are you sure?
+      hint: 1
+      promptEvent:
+        m_PersistentCalls:
+          m_Calls: []
+      conditions: []
+      delaySeconds: 0
+      pauseSeconds: 0
+    - type: 0
+      text: Do you hear any sounds coming from the testing chamber?
+      hint: 1
+      promptEvent:
+        m_PersistentCalls:
+          m_Calls: []
+      conditions: []
+      delaySeconds: 0
+      pauseSeconds: 0
+    - type: 0
+      text: Is it pulling you in?
+      hint: 1
+      promptEvent:
+        m_PersistentCalls:
+          m_Calls: []
+      conditions: []
+      delaySeconds: 0
+      pauseSeconds: 0
+    - type: 0
+      text: Do you feel tired?
+      hint: 1
+      promptEvent:
+        m_PersistentCalls:
+          m_Calls: []
+      conditions: []
+      delaySeconds: 0
+      pauseSeconds: 0
+    - type: 0
+      text: Do you feel something behind you?
+      hint: 1
+      promptEvent:
+        m_PersistentCalls:
+          m_Calls: []
+      conditions: []
+      delaySeconds: 0
+      pauseSeconds: 0
+    - type: 0
+      text: Can you observe any visual glitching on the monitor?
+      hint: 1
+      promptEvent:
+        m_PersistentCalls:
+          m_Calls: []
+      conditions: []
+      delaySeconds: 0
+      pauseSeconds: 0
+    - type: 0
+      text: Do you feel safe?
+      hint: 1
+      promptEvent:
+        m_PersistentCalls:
+          m_Calls: []
+      conditions: []
+      delaySeconds: 0
+      pauseSeconds: 0
+    - type: 0
+      text: Do you feel the vibrations coming from the testing chamber wall?
+      hint: 1
+      promptEvent:
+        m_PersistentCalls:
+          m_Calls: []
+      conditions: []
+      delaySeconds: 1
+      pauseSeconds: 3
+    - type: 1
+      text: 'Processing data\d.\d.\d.\d
+
+        Finished!'
+      hint: 1
+      promptEvent:
+        m_PersistentCalls:
+          m_Calls: []
+      conditions: []
+      delaySeconds: 0
+      pauseSeconds: 0
+    - type: 1
+      text: 'You have completed your shift.
+
+        You can now go back to your
+        room.'
+      hint: 1
+      promptEvent:
+        m_PersistentCalls:
+          m_Calls: []
+      conditions: []
       delaySeconds: 0
       pauseSeconds: 0
   uiText: {fileID: 1512091390}
@@ -12931,7 +13637,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 10, y: 10}
+  m_SizeDelta: {x: 5, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &899616984
 MonoBehaviour:
@@ -12953,7 +13659,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -25144,6 +25850,260 @@ Transform:
   - {fileID: 640960688}
   m_Father: {fileID: 855144415}
   m_LocalEulerAnglesHint: {x: 0, y: 30, z: 0}
+--- !u!1 &1953308350
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1953308351}
+  - component: {fileID: 1953308353}
+  - component: {fileID: 1953308352}
+  m_Layer: 0
+  m_Name: Siren1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1953308351
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1953308350}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.50000006, y: 0.49999994, z: 0.50000006, w: 0.50000006}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 351942718}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 90}
+--- !u!114 &1953308352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1953308350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalLightData
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_CustomShadowLayers: 0
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
+  m_RenderingLayersMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_ShadowRenderingLayersMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_Version: 4
+  m_LightLayerMask: 1
+  m_ShadowLayerMask: 1
+  m_RenderingLayers: 1
+  m_ShadowRenderingLayers: 1
+--- !u!108 &1953308353
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1953308350}
+  m_Enabled: 1
+  serializedVersion: 11
+  m_Type: 0
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Intensity: 100
+  m_Range: 10
+  m_SpotAngle: 140
+  m_InnerSpotAngle: 80
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 2
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ForceVisible: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+  m_LightUnit: 1
+  m_LuxAtDistance: 1
+  m_EnableSpotReflector: 1
+--- !u!1 &1976139244
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1976139245}
+  - component: {fileID: 1976139247}
+  - component: {fileID: 1976139246}
+  m_Layer: 0
+  m_Name: Siren2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1976139245
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1976139244}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.5, y: -0.5, z: 0.5, w: 0.5}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 351942718}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 90}
+--- !u!114 &1976139246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1976139244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalLightData
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_CustomShadowLayers: 0
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
+  m_RenderingLayersMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_ShadowRenderingLayersMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_Version: 4
+  m_LightLayerMask: 1
+  m_ShadowLayerMask: 1
+  m_RenderingLayers: 1
+  m_ShadowRenderingLayers: 1
+--- !u!108 &1976139247
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1976139244}
+  m_Enabled: 1
+  serializedVersion: 11
+  m_Type: 0
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Intensity: 100
+  m_Range: 10
+  m_SpotAngle: 140
+  m_InnerSpotAngle: 80
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 2
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ForceVisible: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+  m_LightUnit: 1
+  m_LuxAtDistance: 1
+  m_EnableSpotReflector: 1
 --- !u!1 &2019881763
 GameObject:
   m_ObjectHideFlags: 0
@@ -25159,7 +26119,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2019881764
 Transform:
   m_ObjectHideFlags: 0
@@ -25191,3 +26151,4 @@ SceneRoots:
   - {fileID: 1704160015}
   - {fileID: 436214492}
   - {fileID: 391586988}
+  - {fileID: 351942718}

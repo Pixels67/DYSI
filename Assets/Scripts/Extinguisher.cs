@@ -23,20 +23,21 @@ public class Extinguisher : Item
         if (obj.CompareTag("Fire"))
         {
             obj.GetComponent<ParticleSystem>()?.Stop();
-            _foamCoroutine = StartCoroutine(Foam());
+            _foamCoroutine = StartCoroutine(Foam(obj));
         }
     }
 
-    private IEnumerator Foam()
+    private IEnumerator Foam(GameObject obj)
     {
-        var obj = Instantiate(foamParticleSystem, foamParticleSystem.transform.position, foamParticleSystem.transform.rotation);
+        var particle = Instantiate(foamParticleSystem, foamParticleSystem.transform.position, foamParticleSystem.transform.rotation);
 
-        obj.GetComponent<ParticleSystem>().Play();
+        particle.GetComponent<ParticleSystem>().Play();
         yield return new WaitForSeconds(foamDuration);
 
-        obj.GetComponent<ParticleSystem>().Stop();
+        particle.GetComponent<ParticleSystem>().Stop();
         _foamCoroutine = null;
         
-        Destroy(obj);
+        Destroy(particle);
+        obj.SetActive(false);
     }
 }

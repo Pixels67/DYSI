@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -70,11 +71,11 @@ public class PromptManager : MonoBehaviour
             StopCoroutine(_displayTextCoroutine);
         }
 
+        uiText.text = string.Empty;
         yield return new WaitForSeconds(prompt.delaySeconds);
 
         prompt.promptEvent.Invoke();
-        uiText.text = string.Empty;
-        _displayTextCoroutine = StartCoroutine(DisplayPromptText(prompt, _promptCounter != prompts.Count - 1));
+        _displayTextCoroutine = StartCoroutine(DisplayPromptText(prompt, _promptCounter != prompts.Count - 1 && prompt.hint));
         _promptCounter++;
 
         yield return new WaitForSeconds(prompt.pauseSeconds);
@@ -82,6 +83,18 @@ public class PromptManager : MonoBehaviour
         if (_promptCounter >= prompts.Count)
         {
             FinishedShift = true;
+        }
+
+        var conditionsComplete = false;
+        while (!conditionsComplete)
+        {
+            conditionsComplete = !prompt.conditions.Exists(condition => !condition.IsComplete());
+            yield return null;
+        }
+
+        while (_displayTextCoroutine != null)
+        {
+            yield return null; // Just wait
         }
         
         _displayPromptCoroutine = null;
@@ -123,6 +136,12 @@ public class PromptManager : MonoBehaviour
     }
 }
 
+public enum ConditionType
+{
+    ObjectIsActive,
+    ObjectIsInactive
+}
+
 public enum PromptType
 {
     YesNo,
@@ -136,11 +155,30 @@ internal struct PromptList
 }
 
 [System.Serializable]
+internal struct Condition
+{
+    public ConditionType type;
+    public GameObject gameObject;
+
+    public bool IsComplete()
+    {
+        return type switch
+        {
+            ConditionType.ObjectIsActive => gameObject.activeSelf,
+            ConditionType.ObjectIsInactive => !gameObject.activeSelf,
+            _ => throw new ArgumentOutOfRangeException()
+        };
+    }
+}
+
+[System.Serializable]
 internal struct Prompt
 {
     public PromptType type;
     [TextArea(3, 20)] public string text;
+    public bool hint;
     public UnityEvent promptEvent;
+    public List<Condition> conditions;
     public float delaySeconds;
     public float pauseSeconds;
 }
