@@ -20,6 +20,8 @@ public class PromptManager : MonoBehaviour
     private Coroutine _displayPromptCoroutine;
     private Coroutine _displayTextCoroutine;
 
+    private AudioSource _audioSource;
+
     public void AdvanceShift()
     {
         if (_shiftCounter + 1 < promptLists.Length)
@@ -43,6 +45,7 @@ public class PromptManager : MonoBehaviour
     private void Awake()
     {
         _displayPromptCoroutine = StartCoroutine(DisplayNextPrompt());
+        _audioSource = GetComponent<AudioSource>();
     }
 
     private void ButtonCallback(ButtonType type)
@@ -130,6 +133,7 @@ public class PromptManager : MonoBehaviour
 
             uiText.text += buffer[0];
             buffer = buffer[1..];
+            _audioSource?.Play();
         }
 
         _displayTextCoroutine = null;

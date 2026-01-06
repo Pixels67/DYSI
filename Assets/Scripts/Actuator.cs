@@ -31,6 +31,8 @@ public class Actuator : MonoBehaviour, IInteractable
 
     public void Actuate()
     {
+        PlaySound();
+        
         if (!_actuated)
         {
             transform.Translate(translation);
@@ -47,6 +49,8 @@ public class Actuator : MonoBehaviour, IInteractable
 
     public IEnumerator ActuateCoroutine()
     {
+        PlaySound();
+        
         if (!_actuated && transform)
         {
             for (float i = 0; i < 1.0f / speed; i += 1)
@@ -71,5 +75,14 @@ public class Actuator : MonoBehaviour, IInteractable
         }
 
         _actuateCoroutine = null;
+    }
+
+    private void PlaySound()
+    {
+        var source = GetComponent<AudioSource>();
+        
+        if (source == null) return;
+        
+        source.Play();
     }
 }

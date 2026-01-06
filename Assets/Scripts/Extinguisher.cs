@@ -24,6 +24,7 @@ public class Extinguisher : Item
         {
             obj.GetComponent<ParticleSystem>()?.Stop();
             _foamCoroutine = StartCoroutine(Foam(obj));
+            GetComponent<AudioSource>()?.Play();
         }
     }
 
