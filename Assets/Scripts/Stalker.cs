@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(SpriteRenderer))]
-public class Stalker : MonoBehaviour, IInteractable
+public class Stalker : MonoBehaviour
 {
     [SerializeField] private Vector3 retreatPos;
     [SerializeField] private float retreatSpeed = 0.1f;
@@ -18,7 +18,7 @@ public class Stalker : MonoBehaviour, IInteractable
         Deactivate();
     }
     
-    public void Hover()
+    public void OnMouseOver()
     {
         if (!_active)
         {
@@ -26,10 +26,6 @@ public class Stalker : MonoBehaviour, IInteractable
         }
 
         _retreatCoroutine ??= StartCoroutine(Retreat());
-    }
-
-    public void Interact()
-    {
     }
 
     public void Activate()

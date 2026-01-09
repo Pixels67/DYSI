@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Collider))]
 [RequireComponent(typeof(AudioSource))]
-public class Monster : MonoBehaviour, IInteractable
+public class Monster : MonoBehaviour
 {
     [SerializeField] private float pauseTimeSeconds = 1.0f;
     [SerializeField] private float delayTimeSeconds = 7.0f;
@@ -14,15 +14,11 @@ public class Monster : MonoBehaviour, IInteractable
     
     private Coroutine _coroutine;
     
-    public void Hover()
+    public void OnMouseOver()
     {
         if (_coroutine != null) return;
         
         _coroutine = StartCoroutine(JumpScare());
-    }
-
-    public void Interact()
-    {
     }
 
     private IEnumerator JumpScare()
@@ -33,6 +29,9 @@ public class Monster : MonoBehaviour, IInteractable
         
         onEnd?.Invoke();
         yield return new WaitForSeconds(delayTimeSeconds);
+        
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }

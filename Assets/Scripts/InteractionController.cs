@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -14,6 +15,7 @@ public class InteractionController : MonoBehaviour
     
     [SerializeField] private float maxInteractDistance = 5.0f;
     [SerializeField] private Transform hand;
+    [SerializeField] private TMP_Text hintText;
     
     private Camera _camera;
     private GameObject _itemObject;
@@ -44,6 +46,8 @@ public class InteractionController : MonoBehaviour
 
     private void Update()
     {
+        hintText.text = _itemObject != null ? "[RMB] to use item " : string.Empty;
+
         var ray = _camera.ViewportPointToRay(new Vector2(0.5f, 0.5f));
 
         if (!Physics.Raycast(ray, out var hit, maxInteractDistance))
@@ -51,10 +55,17 @@ public class InteractionController : MonoBehaviour
             return;
         }
 
+        if (!hit.collider.gameObject.activeSelf) return;
+        
         var components = hit.collider.gameObject.GetComponents<IInteractable>();
         foreach (var component in components)
         {
             component.Hover();
+        }
+
+        if (components.Length != 0)
+        {
+            hintText.text += "[LMB] to interact";
         }
 
         if (Mouse.current.leftButton.wasPressedThisFrame)
