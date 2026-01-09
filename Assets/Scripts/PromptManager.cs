@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -50,10 +49,12 @@ public class PromptManager : MonoBehaviour
 
     private void ButtonCallback(ButtonType type)
     {
+#if !UNITY_EDITOR
         if (_displayPromptCoroutine != null)
         {
             return;
         }
+#endif
 
         _displayPromptCoroutine = StartCoroutine(DisplayNextPrompt());
     }
@@ -75,13 +76,17 @@ public class PromptManager : MonoBehaviour
         }
 
         uiText.text = string.Empty;
+#if !UNITY_EDITOR
         yield return new WaitForSeconds(prompt.delaySeconds);
+#endif
 
         prompt.promptEvent.Invoke();
         _displayTextCoroutine = StartCoroutine(DisplayPromptText(prompt, _promptCounter != prompts.Count - 1 && prompt.hint));
         _promptCounter++;
 
+#if !UNITY_EDITOR
         yield return new WaitForSeconds(prompt.pauseSeconds);
+#endif
 
         if (_promptCounter >= prompts.Count)
         {
@@ -95,10 +100,12 @@ public class PromptManager : MonoBehaviour
             yield return null;
         }
 
+#if !UNITY_EDITOR
         while (_displayTextCoroutine != null)
         {
             yield return null; // Just wait
         }
+#endif
 
         _displayPromptCoroutine = null;
     }
@@ -119,6 +126,7 @@ public class PromptManager : MonoBehaviour
 
         while (buffer.Length != 0)
         {
+#if !UNITY_EDITOR
             if (buffer[0] == ' ')
             {
                 yield return new WaitForSeconds(charDelaySeconds);
@@ -134,12 +142,15 @@ public class PromptManager : MonoBehaviour
                 yield return new WaitForSeconds(1);
                 continue;
             }
+#endif
 
             uiText.text += buffer[0];
             buffer = buffer[1..];
         }
 
         _displayTextCoroutine = null;
+        
+        yield return null; // To keep it from being angry in editor builds
     }
 }
 

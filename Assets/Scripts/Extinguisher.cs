@@ -30,15 +30,12 @@ public class Extinguisher : Item
 
     private IEnumerator Foam(GameObject obj)
     {
-        var particle = Instantiate(foamParticleSystem, foamParticleSystem.transform.position, foamParticleSystem.transform.rotation);
-
-        particle.GetComponent<ParticleSystem>().Play();
+        foamParticleSystem.Play();
         yield return new WaitForSeconds(foamDuration);
 
-        particle.GetComponent<ParticleSystem>().Stop();
+        foamParticleSystem.Stop();
         _foamCoroutine = null;
         
-        Destroy(particle);
         obj.SetActive(false);
     }
 }

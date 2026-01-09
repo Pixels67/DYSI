@@ -30,11 +30,11 @@ public class Crystal : MonoBehaviour
 
     public void Accelerate()
     {
-        rotateSpeed += 20.0f;
+        rotateSpeed += 30.0f;
     }
 
     public void Decelerate()
     {
-        rotateSpeed -= 20.0f;
+        rotateSpeed -= 30.0f;
     }
 }
